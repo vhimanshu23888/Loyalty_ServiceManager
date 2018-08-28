@@ -1,0 +1,20 @@
+<td-layout>
+  <td-layout-nav-list #navList
+  [opened]="media.registerQuery('gt-sm') | async"
+  [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'over'"
+  [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'"  
+  toolbarTitle="Aristocrat" navigationRoute="/home" opened="false" mode="side">
+    <!-- <button mat-icon-button td-menu-button tdLayoutToggle>
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <div td-sidenav-content>
+        <mat-nav-list>
+            <a [routerLink]="['/home/upload']" mat-list-item>Upload Servers</a>
+            <a [routerLink]="['/home/applications']" mat-list-item>Installed Applications</a>
+            <a [routerLink]="['/home/services']" mat-list-item>Manage Services</a>
+            <a [routerLink]="['/home/readlogs']" mat-list-item>Read Logs</a>
+          </mat-nav-list>
+    </div>
+    <router-outlet></router-outlet>
+  </td-layout-nav-list>
+</td-layout>

@@ -1,0 +1,15 @@
+<div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+    <div layout="row">
+      <mat-form-field flex>
+        <input matInput [(ngModel)]="overlayDemo.name" placeholder="Name"/>
+      </mat-form-field>
+    </div>
+    <div layout="row">
+      <mat-form-field flex>
+        <textarea matInput [(ngModel)]="overlayDemo.description" placeholder="Description" rows="4"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div layout="row">
+    <button mat-button color="primary" (click)="toggleOverlayStarSyntax()" class="text-upper">Toggle Loader</button>
+  </div>

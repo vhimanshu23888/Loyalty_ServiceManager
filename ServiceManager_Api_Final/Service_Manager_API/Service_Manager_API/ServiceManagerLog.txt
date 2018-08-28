@@ -1,0 +1,3 @@
+
+INFO    2018-08-21 10:21:22 – INFO : Entered UploadCSV_ServerNames
+INFO    2018-08-21 10:21:22 – ERROR : Upload Server Path:--> C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\App_Data\ServerNames.csv

@@ -1,0 +1,82 @@
+<script type="text/javascript" language="javascript">
+    function getAllValues()
+    {
+      alert('js func');
+    var table = document.getElementById("tblServices");
+    var _rows = table.rows.length;
+    var data = [];
+    for(i = 0;i<_rows;i++)
+    {
+      var _rowObj = table.getElementsByTagName("tr")[i];
+      var _ddl = _rowObj.getElementsByTagName('select')[0];
+      var _selValue =  _ddl.options[_ddl.selectedIndex].value;
+      if(_rowObj.getElementsByTagName('input')[0].checked==true)
+      {
+        alert('checked');
+          data.push({
+            MachineName: _rowObj.cells.item(1).innerHTML,
+            ServiceName: _rowObj.cells.item(2).innerHTML,
+            IsWebService:  _rowObj.cells.item(5).innerHTML,
+            StatusToBeUpdated: _selValue
+          })
+      }
+    }
+  
+    // for(i=0;i<data.length;i++)
+    // {
+    //   alert(data[i].StatusToBeUpdated);
+    // }
+    return data;
+  }
+  
+  </script>
+<br/>
+<br/>
+<div class="row">
+<div class="col-md-6">
+<!-- <a routerLink="/home" class="btn btn-default">
+  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Home
+</a> -->
+</div>
+  <div class="col-md-offset-3 col-md-3">
+  </div>
+</div>
+<br/>
+<br/>
+<div class="row">
+    <div class="table-responsive">
+        <table class="table" id="tblServices">
+          <thead style="background-color:azure;font-weight: bold">
+                <th style="align-content: center">Select</th>
+                <th style="align-content: center">Machine Name</th>
+                <th style="align-content: center">Service</th>
+                <th style="align-content: center">STATUS</th>
+                <th style="align-content: center">Display Name</th>
+                <th style="align-content: center">IsWebService</th>
+                <th style="align-content: center">Action</th>
+
+              </thead>
+            <tbody>              
+                <tr style="border:black;border:5cm;" *ngFor="let s of Services">
+                  <td><input type="checkbox" class="Chk" ></td>
+                    <td style="align-content: center">{{s.MachineName}}</td>
+                    <td style="align-content: center">{{s.ServiceName}}</td>
+                    <td style="align-content: center">{{s.ServiceStatus}}</td>
+                    <td style="align-content: center">{{s.DisplayName}}</td>
+                    <td style="align-content: center">{{s.IsWebService}}</td>
+                    <td style="align-content: center"><select>
+                      <option value="4">Start</option>
+                      <option value="1">Stop</option>
+                      <option value="10">Restart</option>
+                      <option value="7">Pause(Only for Windows Services)</option>
+                    </select></td>
+                </tr>
+          </tbody>
+
+        </table>
+        <br>
+        <br>
+        <button id="btn_UpdateServices" type="button" onclick="getAllValues()">Update Services</button>
+    </div>
+</div>
+
