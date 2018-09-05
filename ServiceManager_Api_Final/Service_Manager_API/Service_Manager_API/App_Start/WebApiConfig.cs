@@ -52,6 +52,10 @@ namespace Service_Manager_API
                 routeTemplate: "api/{controller}/{action}");
 
             config.Routes.MapHttpRoute(
+            name: "GetServicesLogFile",
+            routeTemplate: "api/{controller}/{action}/{MachineName}/{ServiceName}");
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}/{MachineName}",
                 defaults: new { MachineName = RouteParameter.Optional });

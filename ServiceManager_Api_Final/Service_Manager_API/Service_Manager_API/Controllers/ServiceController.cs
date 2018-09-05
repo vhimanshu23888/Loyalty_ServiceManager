@@ -192,10 +192,31 @@ namespace Service_Manager_Api.Controllers
             catch(Exception ex)
             {
                 log = "Error Reading Log File.";
-                Logger.logEvent(LogLevel.ERROR, "Error in ServiceRepository.UpdateServiceStatus --> " + ex.Message);
+                Logger.logEvent(LogLevel.ERROR, "Error in ServiceController.UpdateServiceStatus --> " + ex.Message);
             }
             return log;
 
+        }
+
+        [HttpGet]
+        public string GetServicesLogFile([FromUri]string MachineName, [FromUri]string ServiceName)
+        {
+            string fileContent = string.Empty;
+            string line = string.Empty;
+            try
+            {
+                string filename = "RewardsService.log";
+                string path = @"\\172.28.70.45\RewardsService";
+                StreamReader sr = new StreamReader(Path.Combine(path,filename));
+                while ((line = sr.ReadLine()) != null) 
+                    fileContent = fileContent + "\n" + line;
+            }
+            catch(Exception ex)
+            {
+                Logger.logEvent(LogLevel.ERROR, "Error in ServiceRepository.GetServicesLogFile --> " + ex.Message);
+            }
+
+            return fileContent;
         }
     }
 }
