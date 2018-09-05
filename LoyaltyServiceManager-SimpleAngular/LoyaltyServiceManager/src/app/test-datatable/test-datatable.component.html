@@ -32,9 +32,6 @@
     </td-search-box>
   </div>
   <mat-divider></mat-divider>
-  <div *ngIf ="data" hidden="hidden">
-  {{data[0].StatusToBeUpdated}}
-  </div>
   <td-data-table
     #dataTable
     [data]="data"
@@ -49,6 +46,9 @@
     (sortChange)="sort($event)"
     (rowClick)="showAlert($event)"
     [style.height.px]="750">
+    <ng-template tdDataTableTemplate="IsWebService" *ngIf="(dataTable.hasData)" let-value="value">
+      <img [src]="value ? 'assets/images/browser.png' : 'assets/images/monitor.png'">
+    </ng-template>
     <ng-template tdDataTableTemplate="StatusToBeUpdated">
       <button (click)="Update(4)">
           Start Service
@@ -65,8 +65,8 @@
   </div>
   <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)" [style.width.px]="500" >
     <span hide-xs>Rows per page:</span>
-    <mat-select [style.width.px]="50" [(ngModel)]="pageSize">
-      <mat-option *ngFor="let size of [50,100,200,500]" [value]="size">
+    <mat-select [style.width.px]="10" [(ngModel)]="pageSize">
+      <mat-option *ngFor="let size of [10,20,30,50,100]" [value]="size">
         {{size}}
       </mat-option>
     </mat-select>
