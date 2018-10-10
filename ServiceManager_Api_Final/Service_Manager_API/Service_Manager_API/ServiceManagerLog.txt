@@ -1,3 +1,83 @@
 
 INFO    2018-08-21 10:21:22 – INFO : Entered UploadCSV_ServerNames
 INFO    2018-08-21 10:21:22 – ERROR : Upload Server Path:--> C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\App_Data\ServerNames.csv
+INFO    2018-09-06 11:45:13 – INFO : Entered ReadVersions
+INFO    2018-09-06 11:45:47 – ERROR : Outer Exception --> The network path was not found.
+
+INFO    2018-09-06 11:47:16 – INFO : Entered ReadVersions
+INFO    2018-09-06 11:47:22 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-06 11:49:20 – INFO : Entered UploadCSV_ServerNames
+INFO    2018-09-06 11:49:20 – ERROR : Upload Server Path:--> C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\App_Data\ServerNames.csv
+INFO    2018-09-06 11:49:25 – INFO : Entered ReadVersions
+INFO    2018-09-06 11:49:30 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-06 11:49:55 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-06 11:50:12 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-06 11:53:40 – INFO : Entered ReadVersions
+INFO    2018-09-06 11:53:45 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-06 11:54:10 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-06 11:54:26 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:04:11 – INFO : Entered ReadVersions
+INFO    2018-09-07 12:04:16 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:04:41 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:04:58 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:09:20 – INFO : Entered ReadVersions
+INFO    2018-09-07 12:09:25 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:09:50 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:10:06 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:23:28 – INFO : Entered ReadVersions
+INFO    2018-09-07 12:23:33 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:23:58 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-07 12:24:14 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-20 12:49:05 – INFO : Entered ReadVersions
+INFO    2018-09-20 12:49:13 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-20 12:49:46 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-20 12:50:10 – ERROR : Error Reading Application Details --> Object reference not set to an instance of an object.
+INFO    2018-09-20 12:50:55 – INFO : Entered GetAllServices
+INFO    2018-09-20 12:51:59 – INFO : Entered GetAllServices
+INFO    2018-09-20 12:53:35 – INFO : Entered GetAllServices
+INFO    2018-09-20 12:54:07 – INFO : Entered GetAllServices
+INFO    2018-09-20 12:54:57 – INFO : Entered UploadCSV_ServerNames
+INFO    2018-09-20 12:54:57 – ERROR : Upload Server Path:--> C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\App_Data\ServerNames.csv
+INFO    2018-09-20 12:55:06 – INFO : Entered GetAllServices
+INFO    2018-09-25 09:13:33 – ERROR : Error Fetching ServerType Details --> ExecuteReader requires an open and available Connection. The connection's current state is closed.
+INFO    2018-10-01 06:56:26 – ERROR : Error Fetching ServerType Details --> ExecuteReader requires an open and available Connection. The connection's current state is closed.
+INFO    2018-10-01 07:08:26 – ERROR : Error Inserting ServerType Details --> ExecuteScalar requires an open and available Connection. The connection's current state is closed.
+INFO    2018-10-01 07:10:03 – ERROR : Error Inserting ServerType Details --> ExecuteScalar requires an open and available Connection. The connection's current state is closed.
+INFO    2018-10-02 10:04:22 – ERROR : Error Inserting ServerType Details --> ExecuteScalar requires an open and available Connection. The connection's current state is closed.
+INFO    2018-10-02 10:27:54 – ERROR : Error Inserting ServerType Details for ServerType database  --> ExecuteScalar requires an open and available Connection. The connection's current state is closed.
+INFO    2018-10-02 10:34:17 – ERROR : Error Inserting ServerType Details for ServerType database  --> Object reference not set to an instance of an object.
+INFO    2018-10-02 10:35:28 – ERROR : Error Inserting ServerType Details for ServerType database  --> Object reference not set to an instance of an object.
+INFO    2018-10-02 10:37:53 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType database
+INFO    2018-10-03 09:26:22 – INFO : Insert ServerTypeMaster Record Inserted Successfully for ServerType Application 
+INFO    2018-10-10 11:51:40 – INFO : Insert ServerTypeMaster Record Inserted Successfully for ServerType DBServer 
+INFO    2018-10-10 11:51:57 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType DBServer
+INFO    2018-10-10 11:51:59 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType DBServer
+INFO    2018-10-10 11:53:38 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType Application
+INFO    2018-10-10 11:53:58 – INFO : Insert ServerTypeMaster Record Inserted Successfully for ServerType ApplicationServer 
+INFO    2018-10-10 11:53:59 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:00 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:00 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:00 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:00 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:00 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:01 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:01 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:01 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:03 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:17 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:17 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType ApplicationServer
+INFO    2018-10-10 11:54:53 – INFO : Insert ServerTypeMaster Record Inserted Successfully for ServerType ApplicationServer1 
+INFO    2018-10-10 11:57:10 – INFO : Insert ServerTypeMaster Record Inserted Successfully for ServerType ApplicationServer123 
+INFO    2018-10-11 12:10:24 – INFO : Insert ServerTypeMaster Record Inserted Successfully for ServerType NewType 
+INFO    2018-10-11 12:10:42 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType NewType
+INFO    2018-10-11 12:10:43 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType NewType
+INFO    2018-10-11 12:10:44 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType NewType
+INFO    2018-10-11 12:10:44 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType NewType
+INFO    2018-10-11 12:10:44 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType NewType
+INFO    2018-10-11 12:12:09 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType NewType
+INFO    2018-10-11 12:13:11 – INFO : Insert ServerTypeMaster Record Inserted Successfully for ServerType NewSample 
+INFO    2018-10-11 12:13:25 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType NewSample
+INFO    2018-10-11 12:14:38 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType NewSample
+INFO    2018-10-11 12:24:45 – INFO : Insert ServerTypeMaster Record Inserted Successfully for ServerType  
+INFO    2018-10-11 12:24:55 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType 
+INFO    2018-10-11 12:25:20 – INFO : Insert ServerTypeMaster Record Could not be Inserted for ServerType 

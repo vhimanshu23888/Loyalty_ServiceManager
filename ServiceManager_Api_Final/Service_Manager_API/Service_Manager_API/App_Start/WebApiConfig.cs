@@ -11,7 +11,7 @@ namespace Service_Manager_API
             config.EnableCors();
             config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(            
+            config.Routes.MapHttpRoute(
             name: "UploadCSV_ServerNames",
             routeTemplate: "api/{controller}/{action}/{CSVData}",
             defaults: new { CSVData = RouteParameter.Optional }
@@ -40,7 +40,7 @@ namespace Service_Manager_API
             config.Routes.MapHttpRoute(
             name: "GetEnvironmentDetails",
             routeTemplate: "api/{controller}/{action}/{ServerName}",
-            defaults: new {ServerName = RouteParameter.Optional});
+            defaults: new { ServerName = RouteParameter.Optional });
 
             config.Routes.MapHttpRoute(
             name: "GetServicesByConfiguredMachines",
@@ -48,12 +48,62 @@ namespace Service_Manager_API
             defaults: new { ServerName = RouteParameter.Optional });
 
             config.Routes.MapHttpRoute(
-                name: "GetConfiguredServicesByConfiguredMachines",
-                routeTemplate: "api/{controller}/{action}");
+            name: "GetConfiguredServicesByConfiguredMachines",
+            routeTemplate: "api/{controller}/{action}");
 
             config.Routes.MapHttpRoute(
             name: "GetServicesLogFile",
             routeTemplate: "api/{controller}/{action}/{MachineName}/{ServiceName}");
+
+            config.Routes.MapHttpRoute(
+            name: "GetAllServerDetails",
+            routeTemplate: "api/{controller}/{action}/{ServerMasterName}",
+            defaults: new
+            {
+                ServerMasterName = RouteParameter.Optional
+            });
+
+            config.Routes.MapHttpRoute(
+            name: "GetAllServerTypes",
+            routeTemplate: "api/{controller}/{action}/{ServerTypeName}",
+            defaults: new
+            {
+                ServerTypeName = RouteParameter.Optional
+            });
+
+            config.Routes.MapHttpRoute(
+            name: "GetAllEnvironmentNames",
+            routeTemplate: "api/{controller}/{action}/{EnvironmentName}",
+            defaults: new
+            {
+                EnvironmentName = RouteParameter.Optional
+            });
+
+            config.Routes.MapHttpRoute(
+            name: "PutServerTypeMaster",
+            routeTemplate: "api/{controller}/{action}");
+
+            config.Routes.MapHttpRoute(
+            name: "PutServerMaster",
+            routeTemplate: "api/{controller}/{action}");
+
+            config.Routes.MapHttpRoute(
+            name: "PutEnvironmentMaster",
+            routeTemplate: "api/{controller}/{action}");
+
+
+            config.Routes.MapHttpRoute(
+            name: "PostServerTypeMaster",
+            routeTemplate: "api/{controller}/{action}");
+
+            config.Routes.MapHttpRoute(
+            name: "PostServerMaster",
+            routeTemplate: "api/{controller}/{action}");
+
+            config.Routes.MapHttpRoute(
+            name: "PostEnvironmentMaster",
+            routeTemplate: "api/{controller}/{action}");
+
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

@@ -4,6 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { EnvironmentDetailsComponent } from './environment-details/environment-details.component';
 import { UploadServersComponent } from './upload-servers/upload-servers.component';
 import { ReadLogsComponent } from './read-logs/read-logs.component';
+import {EnvironmentMasterComponent} from './environment-master/environment-master.component';
+import {ServerTypeMasterComponent } from './server-type-master/server-type-master.component';
+import {ServerMasterComponent} from './server-master/server-master.component'
 
 const app_routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -12,7 +15,10 @@ const app_routes: Routes = [
       { path: 'services', component: TestDatatableComponent },
       { path: 'applications', component: EnvironmentDetailsComponent },
       { path: 'upload', component: UploadServersComponent },
-      { path: 'readlogs', component: ReadLogsComponent }
+      { path: 'readlogs', component: ReadLogsComponent },
+      { path: 'EnvironmentMaster', component: EnvironmentMasterComponent },
+      { path: 'ServerTypeMaster', component: ServerTypeMasterComponent },
+      { path: 'ServerMaster', component: ServerMasterComponent }
 
     ]
   }

@@ -196,7 +196,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="Models\EnvironmentMaster.cs" />
     <Compile Include="Models\InstalledAppDetails.cs" />
+    <Compile Include="Models\ServerMaster.cs" />
+    <Compile Include="Models\ServerTypeMaster.cs" />
     <Compile Include="Models\ServiceResponse.cs" />
     <Compile Include="Models\SystemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,6 +213,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\WebApp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

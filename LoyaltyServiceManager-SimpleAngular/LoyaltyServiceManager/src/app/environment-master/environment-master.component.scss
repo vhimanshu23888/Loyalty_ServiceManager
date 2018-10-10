@@ -1,0 +1,18 @@
+.form-title{
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 8px 20px;
+}
+.form-title-spacer{
+    flex: 1 1 auto;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container > * {
+    width: 100%;
+  }

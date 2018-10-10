@@ -37,6 +37,9 @@ import { LoaderComponent } from './loader/loader.component';
 import { CovalentLoadingModule} from '@covalent/core/loading';
 import { UploadServersComponent } from './upload-servers/upload-servers.component';
 import { ReadLogsComponent } from './read-logs/read-logs.component';
+import { ServerMasterComponent } from './server-master/server-master.component';
+import { ServerTypeMasterComponent } from './server-type-master/server-type-master.component';
+import { EnvironmentMasterComponent } from './environment-master/environment-master.component';
 
 @NgModule({
 
@@ -45,7 +48,7 @@ import { ReadLogsComponent } from './read-logs/read-logs.component';
                   CovalentPagingModule,MatSelectModule,BrowserAnimationsModule,MatIconModule,
                   MatListModule,MatInputModule, MatToolbarModule,CovalentMediaModule,MatButtonModule, MatCardModule,MatRadioModule
                 ,CovalentLoadingModule],
-  declarations: [ AppComponent,ServicesComponent, HomeComponent, TestDatatableComponent, FileReaderComponent, EnvironmentDetailsComponent, LoaderComponent, UploadServersComponent, ReadLogsComponent],
+  declarations: [ AppComponent,ServicesComponent, HomeComponent, TestDatatableComponent, FileReaderComponent, EnvironmentDetailsComponent, LoaderComponent, UploadServersComponent, ReadLogsComponent, ServerMasterComponent, ServerTypeMasterComponent, EnvironmentMasterComponent],
   providers:    [ DataService,FileUtil ],
   bootstrap:    [ AppComponent ]
 })

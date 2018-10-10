@@ -12,7 +12,7 @@ using Service_Manager_API.Logging;
 
 namespace Service_Manager_Api.Controllers
 {
-    [EnableCors(origins: "*",headers: "*",methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ServiceController : ApiController
     {
         /// <summary>
@@ -96,8 +96,6 @@ namespace Service_Manager_Api.Controllers
                     result = _serviceRepository.GetAllServices(MachineName).Select(X => X).Where(X => X.ServiceName.Contains(ServiceName) || X.DisplayName.Contains(ServiceName));
             return result.ToList();
         }
-
-        
         [HttpGet]
         public List<SystemService> GetConfiguredServices()
         {
@@ -207,16 +205,108 @@ namespace Service_Manager_Api.Controllers
             {
                 string filename = "RewardsService.log";
                 string path = @"\\172.28.70.45\RewardsService";
-                StreamReader sr = new StreamReader(Path.Combine(path,filename));
-                while ((line = sr.ReadLine()) != null) 
+                StreamReader sr = new StreamReader(Path.Combine(path, filename));
+                while ((line = sr.ReadLine()) != null)
                     fileContent = fileContent + "\n" + line;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Logger.logEvent(LogLevel.ERROR, "Error in ServiceRepository.GetServicesLogFile --> " + ex.Message);
             }
 
             return fileContent;
+        }
+
+        /// <summary>
+        /// Gets all environment names.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<EnvironmentMaster> GetAllEnvironmentNames([FromUri]string EnvironmentName)
+        {
+          return _serviceRepository.GetEnvironmentMaster();
+        }
+
+        /// <summary>
+        /// Gets all server types.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<ServerTypeMaster> GetAllServerTypes([FromUri]string ServerTypeName)
+        {
+            return _serviceRepository.GetServerTypeMaster(ServerTypeName);
+        }
+
+        /// <summary>
+        /// Gets all server details.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<ServerMaster> GetAllServerDetails([FromUri]string ServerMasterName)
+        {
+            return _serviceRepository.GetServerMaster();
+        }
+        /// <summary>
+        /// Posts the environment master.
+        /// </summary>
+        /// <param name="lstEnvironmentMaster">The LST environment master.</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string PostEnvironmentMaster([FromBody]EnvironmentMaster lstEnvironmentMaster)
+        {
+            return _serviceRepository.InsertEnvironmntMaster(lstEnvironmentMaster);
+        }
+        /// <summary>
+        /// Posts the server type master.
+        /// </summary>
+        /// <param name="lstServerTypeMaster">The LST server type master.</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string PostServerTypeMaster([FromBody]ServerTypeMaster lstServerTypeMaster)
+        {
+            return _serviceRepository.InsertServerTypeMaster(lstServerTypeMaster);
+        }
+        /// <summary>
+        /// Posts the server master.
+        /// </summary>
+        /// <param name="lstServerMaster">The LST server master.</param>
+        /// <returns></returns>
+        [HttpPost]
+        public string PostServerMaster([FromBody]ServerMaster lstServerMaster)
+        {
+            return _serviceRepository.InsertServerMaster(lstServerMaster);
+        }
+
+        /// <summary>
+        /// Puts the environment master.
+        /// </summary>
+        /// <param name="EnvironmentMaster">The environment master.</param>
+        /// <returns></returns>
+        [HttpPut]
+        public string PutEnvironmentMaster([FromBody]EnvironmentMaster EnvironmentMaster)
+        {
+            return _serviceRepository.UpdateEnvironmntMaster(EnvironmentMaster);
+        }
+        /// <summary>
+        /// Puts the server type master.
+        /// </summary>
+        /// <param name="ServerTypeMaster">The server type master.</param>
+        /// <returns></returns>
+        [HttpPut]
+        public string PutServerTypeMaster([FromBody]ServerTypeMaster ServerTypeMaster)
+        {
+            return _serviceRepository.UpdateServerTypeMaster(ServerTypeMaster);
+        }
+
+        /// <summary>
+        /// Puts the server master.
+        /// </summary>
+        /// <param name="ServerMaster">The server master.</param>
+        /// <returns></returns>
+        [HttpPut]
+        public string PutServerMaster([FromBody]ServerMaster ServerMaster)
+        {
+            return _serviceRepository.UpdateServerMaster(ServerMaster);
         }
     }
 }

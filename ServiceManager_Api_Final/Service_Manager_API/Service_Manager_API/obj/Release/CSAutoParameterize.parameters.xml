@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ServiceManagerDBCon-Web.config Connection String" description="ServiceManagerDBCon Connection String used in web.config by the application to access the database." defaultValue="Data Source=L43611;Initial Catalog =ServiceManager_DB;User ID = sa;Password=Password1" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\vermahi\\OneDrive\ -\ Aristocrat\ Gaming\\Learning\\Loyalty_ServiceManager\\ServiceManager_Api_Final\\Service_Manager_API\\Service_Manager_API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ServiceManagerDBCon']/@connectionString" />
+  </parameter>
+</parameters>
