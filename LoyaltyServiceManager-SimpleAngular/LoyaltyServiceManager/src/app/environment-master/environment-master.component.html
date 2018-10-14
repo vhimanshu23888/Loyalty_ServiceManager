@@ -3,15 +3,18 @@
     <span style="font-size: 150%">Environment Master</span>
   </div>
 </div>
+<div>
+  <button mat-stroked-button (click) ='getAllEnvironments()'>Get All Environments</button>
+</div>
 <div class="form-container" style="padding-left: 5%;padding-top: 3% ; width: 30%">
   <mat-form-field>
-    <input matInput placeholder="EnvironmentName" required="required">
+    <input name="txtEnvironmentName" matInput placeholder="Environment name" [(ngModel)] ="_environmentName" required="required">
   </mat-form-field>
 <div></div>
-    <button mat-raised-button style="width: 15%">Save</button>
+    <button mat-raised-button style="width: 15%" (click) ="InsertEnvironmentMaster()" >Save</button>
 </div>
-
-<!-- <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" >
+<div *tdLoading="'stringName'; type:'circular'; mode:'indeterminate'; strategy:'replace'; color:'primary'">
+<div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [style.width.px] = "500">
     <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
       <span class="mat-title">Environments</span>
     </span>
@@ -25,10 +28,10 @@
   <mat-divider></mat-divider>
   <td-data-table
     #dataTable
-    [data]="data"
+    [data]="_getallResponse"
     [columns]="columns"
-    [selectable]="true"
-    [clickable]="false"
+    [selectable]="false"
+    [clickable]="true"
     [multiple]="false"
     [sortable]="true"
     [sortBy]="sortBy"
@@ -36,25 +39,17 @@
     [sortOrder]="sortOrder"
     (sortChange)="sort($event)"
     (rowClick)="showAlert($event)"
-    [style.height.px]="750">
-    <ng-template tdDataTableTemplate="IsWebService" *ngIf="(dataTable.hasData)" let-value="value">
-      <img [src]="value ? 'assets/images/browser.png' : 'assets/images/monitor.png'">
+    [style.height.px]="500"
+    [style.width.px]="500"
+    >
+    <ng-template tdDataTableTemplate="Active" *ngIf="(dataTable.hasData)" let-value="value">
+     <input type="checkbox" [checked] = "value ? 'Yes' : 'No'"/>     
     </ng-template>
-    <ng-template tdDataTableTemplate="StatusToBeUpdated">
-      <button (click)="Update(4)">
-          Start Service
-      </button>
-    </ng-template>
-    <ng-template tdDataTableTemplate="StatusToBeUpdated1">
-        <button (click)="Update(1)">
-            Stop Service
-        </button>
-      </ng-template>
   </td-data-table>
   <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
     <h3>No results to display.</h3>
-  </div> -->
-  <!-- <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)" [style.width.px]="500" >
+  </div>
+  <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)" [style.width.px]="400" >
     <span hide-xs>Rows per page:</span>
     <mat-select [style.width.px]="10" [(ngModel)]="pageSize">
       <mat-option *ngFor="let size of [10,20,30,50,100]" [value]="size">
@@ -62,4 +57,5 @@
       </mat-option>
     </mat-select>
     {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
-  </td-paging-bar> -->
+  </td-paging-bar>
+</div>

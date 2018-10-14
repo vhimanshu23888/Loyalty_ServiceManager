@@ -389,6 +389,7 @@ namespace Service_Manager_API.Services
                 {
                     using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ServiceManagerDBCon"].ToString()))
                     {
+                        con.Open();
                         SqlCommand cmd = new SqlCommand("dbo.USP_UC_X_EnvironmentMaster_Insert", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@EnvironmentName", objEnvironmentMaster.EnvironmentName);
@@ -611,6 +612,7 @@ namespace Service_Manager_API.Services
                     con.Open();
                     SqlCommand cmd = new SqlCommand("dbo.USP_UC_X_EnvironmentMaster_Update", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", objEnvironmentMaster.EnvironmentID);
                     cmd.Parameters.AddWithValue("@EnvironmentName", objEnvironmentMaster.EnvironmentName);
                     cmd.Parameters.AddWithValue("@Active", objEnvironmentMaster.Active);
                     Result = ((int)cmd.ExecuteNonQuery() == 1) ? "Record Updated Successfully" : "Record Could not be Inserted";

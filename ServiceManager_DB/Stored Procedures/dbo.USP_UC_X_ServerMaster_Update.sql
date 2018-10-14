@@ -13,8 +13,6 @@ CREATE PROC dbo.USP_UC_X_ServerMaster_Update
 )
 AS 
 BEGIN
-  SET NOCOUNT ON
-
   IF EXISTS (SELECT 1 FROM dbo.UC_X_ServerMaster WHERE ID = @ID AND Server_IP = @Server_IP)
   UPDATE SM SET 
     SM.ServerName = @ServerName,

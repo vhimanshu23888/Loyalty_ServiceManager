@@ -11,7 +11,7 @@ CREATE PROC dbo.USP_UC_X_EnvironmentMaster_Update
 
 AS 
 BEGIN
-  SET NOCOUNT ON
+
   IF EXISTS (SELECT 1 FROM dbo.UC_X_EnvironmentMaster WHERE EnvironmentID = @ID AND EnvironmentName = @EnvironmentName)
   UPDATE dbo.UC_X_EnvironmentMaster SET
     Active = @Active

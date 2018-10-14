@@ -9,7 +9,7 @@ CREATE PROC dbo.USP_UC_X_EnvironmentMaster_Insert
 )
 AS 
 BEGIN
-  --SET NOCOUNT ON
+
   IF NOT EXISTS (SELECT 1 FROM dbo.UC_X_EnvironmentMaster WHERE EnvironmentName = @EnvironmentName)
   INSERT INTO dbo.UC_X_EnvironmentMaster
   (

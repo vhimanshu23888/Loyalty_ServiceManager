@@ -12,7 +12,7 @@ CREATE PROC dbo.USP_UC_X_ServerMaster_Insert
 )
 AS 
 BEGIN
-  --SET NOCOUNT ON
+
   IF NOT EXISTS (SELECT 1 FROM dbo.UC_X_ServerMaster WHERE ServerName = @ServerName)
   INSERT INTO dbo.UC_X_ServerMaster
   SELECT 

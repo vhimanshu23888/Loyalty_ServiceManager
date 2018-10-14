@@ -10,7 +10,7 @@
 <div></div>
     <button mat-raised-button style="width: 15%" (click) ="InsertServerType()" >Save</button>
 </div>
-
+<div *tdLoading="'stringName'; type:'circular'; mode:'indeterminate'; strategy:'replace'; color:'primary'">
 <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" [style.width.px] = "500">
     <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
       <span class="mat-title">Server Types</span>
@@ -55,3 +55,4 @@
     </mat-select>
     {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
   </td-paging-bar>
+</div>
