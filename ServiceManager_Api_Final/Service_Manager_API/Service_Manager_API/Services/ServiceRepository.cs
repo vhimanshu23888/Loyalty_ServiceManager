@@ -566,7 +566,7 @@ namespace Service_Manager_API.Services
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ServiceManagerDBCon"].ToString()))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("USP_UC_X_ServerType_Get", con);
+                    SqlCommand cmd = new SqlCommand("USP_UC_X_Server_Get", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ServerName", ServerName);
                     cmd.Parameters.AddWithValue("@Server_IP", ServerIP);
@@ -582,7 +582,8 @@ namespace Service_Manager_API.Services
                                 ServerTypeName = (dr["ServerTypeName"] == null) ? string.Empty : dr["ServerTypeName"].ToString(),
                                 Active = (dr["Active"] == null) ? false : Convert.ToBoolean(dr["Active"]),
                                 EnvironmentName = (dr["EnvironmentName"] == null) ? string.Empty : dr["EnvironmentName"].ToString(),
-                                ServerName = (dr["ServerName"] == null) ? string.Empty : dr["ServerName"].ToString()
+                                ServerName = (dr["ServerName"] == null) ? string.Empty : dr["ServerName"].ToString(),
+                                ServerIP = (dr["Server_IP"] == null) ? string.Empty : dr["Server_IP"].ToString()
                             }
                         );
                     }

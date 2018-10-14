@@ -95,3 +95,39 @@ INFO    2018-10-14 03:13:32 – INFO : Insert EnvironmentMaster Record Inserted Su
 INFO    2018-10-14 03:26:23 – INFO : Insert EnvironmentMaster Record Inserted Successfully for New Promo
 INFO    2018-10-14 03:30:22 – INFO : Insert EnvironmentMaster Record Inserted Successfully for New Parity
 INFO    2018-10-14 03:31:21 – INFO : Insert EnvironmentMaster Record Inserted Successfully for Hammertime 1.1
+INFO    2018-10-14 10:53:13 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 10:55:43 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 10:56:41 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 10:57:39 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:03:10 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:04:29 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:05:29 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:06:45 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:07:49 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:11:28 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:13:03 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:14:58 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:19:09 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:19:32 – ERROR : Error Inserting Server Details for Server  --> Procedure or function 'USP_UC_X_ServerMaster_Insert' expects parameter '@Server_IP', which was not supplied.
+INFO    2018-10-14 11:19:32 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:40:57 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:41:16 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:55:10 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:55:17 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:55:51 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:56:53 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:57:39 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:57:56 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:59:11 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-14 11:59:37 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 12:00:22 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 12:04:41 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 12:05:04 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 12:43:34 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 12:45:11 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 12:45:37 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 01:02:23 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 01:04:08 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 01:06:21 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 01:06:56 – ERROR : Error Fetching Server Details --> Procedure or function USP_UC_X_ServerType_Get has too many arguments specified.
+INFO    2018-10-15 01:21:03 – ERROR : Error Fetching Server Details --> ServerIP

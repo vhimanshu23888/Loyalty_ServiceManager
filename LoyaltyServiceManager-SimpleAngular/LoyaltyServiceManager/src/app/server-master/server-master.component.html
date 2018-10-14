@@ -1,34 +1,40 @@
-<!-- <div class="form-title">
+<div class="form-title">
   <div class ="form-title-spacer">
-    <span style="font-size: 150%">Environment Master</span>
+    <span style="font-size: 150%">Server Master</span>
   </div>
+</div>
+<div>
+  <button mat-raised-button style="width: 15%" (click) ="InitializePage()">Get Servers</button>
 </div>
 <div class="form-container" style="padding-left: 5%;padding-top: 3% ; width: 30%">
   <mat-form-field>
-    <textarea name="ServerIP" matInput placeholder="Server IP" required="required">
+    <textarea name="ServerIP" matInput placeholder="Server IP" required="required" [(ngModel)] = "_serverIP"></textarea>
   </mat-form-field>
+  <div></div>
   <mat-form-field>
-    <textarea name="ServerName" matInput placeholder="Server Name" required="required">
+    <textarea name="ServerName" matInput placeholder="Server Name" required="required" [(ngModel)] = "_serverName"></textarea>
   </mat-form-field>
+  <div></div>
   <mat-form-field>
-      <mat-select id="ddl_Environment" placeholder="Environment">
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
+      <mat-select id="ddl_Environment" placeholder="Environment" (selectionChange) ="selectEnvironmentChanged($event)">
+        <mat-option *ngFor="let Environment of _getallEnvironmentsResponse" [value]="Environment.EnvironmentName">
+          {{Environment.EnvironmentName}}
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <div></div>
     <mat-form-field>
-        <mat-select id="ddl_ServerType" placeholder="ServerType">
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+        <mat-select id="ddl_ServerType" placeholder="ServerType" (selectionChange) ="selectServerTypeChanged($event)">
+          <mat-option *ngFor="let ServerType of _getallServerTypeResponse"  [value]="ServerType.ServerTypeName">
+            {{ServerType.ServerTypeName}}
           </mat-option>
         </mat-select>
       </mat-form-field>
 <div></div>
-    <button name="btn_Save" mat-raised-button style="width: 15%">Save</button>
+  <button name="btn_Save" mat-raised-button style="width: 15%" (click) = "InsertServerMaster()">Save</button>
 </div>
 
-<!-- <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" >
+<div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm" >
     <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
       <span class="mat-title">Environments</span>
     </span>
@@ -42,10 +48,10 @@
   <mat-divider></mat-divider>
   <td-data-table
     #dataTable
-    [data]="data"
+    [data]="_getallServerMasterResponse"
     [columns]="columns"
-    [selectable]="true"
-    [clickable]="false"
+    [selectable]="false"
+    [clickable]="true"
     [multiple]="false"
     [sortable]="true"
     [sortBy]="sortBy"
@@ -54,24 +60,11 @@
     (sortChange)="sort($event)"
     (rowClick)="showAlert($event)"
     [style.height.px]="750">
-    <ng-template tdDataTableTemplate="IsWebService" *ngIf="(dataTable.hasData)" let-value="value">
-      <img [src]="value ? 'assets/images/browser.png' : 'assets/images/monitor.png'">
-    </ng-template>
-    <ng-template tdDataTableTemplate="StatusToBeUpdated">
-      <button (click)="Update(4)">
-          Start Service
-      </button>
-    </ng-template>
-    <ng-template tdDataTableTemplate="StatusToBeUpdated1">
-        <button (click)="Update(1)">
-            Stop Service
-        </button>
-      </ng-template>
   </td-data-table>
   <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
     <h3>No results to display.</h3>
-  </div> -->
-  <!-- <td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)" [style.width.px]="500" >
+  </div>
+<td-paging-bar #pagingBar [pageSize]="pageSize" [total]="filteredTotal" (change)="page($event)" [style.width.px]="500" >
     <span hide-xs>Rows per page:</span>
     <mat-select [style.width.px]="10" [(ngModel)]="pageSize">
       <mat-option *ngFor="let size of [10,20,30,50,100]" [value]="size">
@@ -79,4 +72,4 @@
       </mat-option>
     </mat-select>
     {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
-  </td-paging-bar> --> -->
+  </td-paging-bar>

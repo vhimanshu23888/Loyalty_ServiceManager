@@ -98,7 +98,7 @@ export class ServerTypeMasterComponent implements OnInit {
   }
     getAllServerTypes(){
       this._loadingService.register('stringName');
-        return this._http.get(CommonConstants.ApiURL + "GetAllServerTypes?ServerTypeName=")
+        this._http.get(CommonConstants.ApiURL + "GetAllServerTypes?ServerTypeName=")
         .subscribe(response => {
           this._getallResponse = response.json();
           this.dataCopy = response.json();

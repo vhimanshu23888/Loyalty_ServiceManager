@@ -12,19 +12,42 @@ CREATE PROC dbo.USP_UC_X_ServerMaster_Insert
 )
 AS 
 BEGIN
+  DECLARE 
+    @EnvironmentID int =0,
+    @ServerTypeID int =0;
+
+    SELECT 
+      @EnvironmentID = ISNULL(EnvironmentID,0)
+    FROM dbo.UC_X_EnvironmentMaster
+    WHERE EnvironmentName = @EnvironmentName;
+    
+    IF(@EnvironmentID = 0)
+    RETURN 0;
+
+    SELECT
+      @ServerTypeID = ISNULL(ID,0)
+    FROM dbo.UC_X_ServerTypeMaster
+    WHERE ServerTypeName = @ServerTypeName;
+
+    IF(@ServerTypeID = 0)
+    RETURN 0;
 
   IF NOT EXISTS (SELECT 1 FROM dbo.UC_X_ServerMaster WHERE ServerName = @ServerName)
   INSERT INTO dbo.UC_X_ServerMaster
-  SELECT 
+  (
+    Server_IP,
+    ServerName,
+    EnvironmentID,
+    ServerTypeID,
+    Active
+  )
+  VALUES
+  (
     @Server_IP,
     @ServerName,
-    EM.EnvironmentID,
-    STM.ID,
+    @EnvironmentID,
+    @ServerTypeID,
     @Active
-  FROM dbo.UC_X_ServerMaster SM
-    INNER JOIN dbo.UC_X_ServerTypeMaster STM  ON SM.ServerTypeID = STM.ID
-    INNER JOIN dbo.UC_X_EnvironmentMaster EM ON SM.EnvironmentID = EM.EnvironmentID
-  WHERE EM.EnvironmentName = @EnvironmentName
-    AND STM.ServerTypeName = @ServerTypeName
+  )
 END
 GO

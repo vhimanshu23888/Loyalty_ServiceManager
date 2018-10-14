@@ -2,7 +2,7 @@ export class ServerMaster {
     ServerID : number;
     ServerName : string;
     ServerIP : string;
-    EnvironmentID : number;
-    ServerTypeID : number;
+    EnvironmentName : string;
+    ServerTypeName : string;
     Active : boolean
 }
