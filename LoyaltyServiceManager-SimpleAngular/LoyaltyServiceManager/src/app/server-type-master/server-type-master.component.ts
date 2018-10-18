@@ -12,7 +12,7 @@ import { TdLoadingService } from '@covalent/core/loading';
 })
 export class ServerTypeMasterComponent implements OnInit {
 
-  columns: ITdDataTableColumn[] = [
+  columns: ITdDataTableColumn[] = [y
     { name: 'ID', label: 'ServerTypeID', width: 100,sortable: false },
     { name: 'ServerTypeName', label: 'ServerType Name', width: 250,sortable: true },
     { name: 'Active', label: 'Is Active', hidden: false, width: 100,sortable: false }
@@ -41,13 +41,20 @@ export class ServerTypeMasterComponent implements OnInit {
   constructor(private _http: Http,private _dataTableService: TdDataTableService,private _loadingService: TdLoadingService) { }
 
   ngOnInit() {
-    this.getAllServerTypes();
-    this.filter();
   }
 
-
+  InitializePage()
+  {    
+    this.getAllServerTypes();
+    //this.filter();
+  }
   InsertServerType() {
-    // alert(this.apiUrl)
+    if(!this._serverTypeName)
+    {
+      alert('ServerType is mandatory');
+      return;
+    }
+    
     this.headers = new Headers({ 'Content-Type': 'application/json' });
 
     if(!this.isUpdate)

@@ -66,7 +66,11 @@ export class ServerMasterComponent implements OnInit {
   InsertServerMaster() {
     // alert(this.apiUrl)
     this.headers = new Headers({ 'Content-Type': 'application/json' });
-
+    if((!this._serverName) ||(!this._serverIP) || (!this._selectedEnvironment) ||(!this._selectedServerType))
+    {
+      alert('All fields is mandatory')
+      return
+    }
     if(!this.isUpdate)
     {
     var requestOptions = new RequestOptions({ method: RequestMethod.Post, headers: this.headers });

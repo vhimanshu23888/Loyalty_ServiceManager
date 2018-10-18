@@ -48,7 +48,12 @@ export class EnvironmentMasterComponent implements OnInit {
 
 
   InsertEnvironmentMaster() {
-    // alert(this.apiUrl)
+    
+    if(!this._environmentName)
+    {
+      alert('Environment Name is mandatory');
+      return;
+    }
     this.headers = new Headers({ 'Content-Type': 'application/json' });
 
     if(!this.isUpdate)
