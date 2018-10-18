@@ -13,32 +13,35 @@ CREATE PROC dbo.USP_UC_X_ServerMaster_Update
 )
 AS 
 BEGIN
-  IF EXISTS (SELECT 1 FROM dbo.UC_X_ServerMaster WHERE ID = @ID AND Server_IP = @Server_IP)
+
+  DECLARE 
+    @EnvironmentID int =0,
+    @ServerTypeID int =0;
+
+    SELECT 
+      @EnvironmentID = ISNULL(EnvironmentID,0)
+    FROM dbo.UC_X_EnvironmentMaster
+    WHERE EnvironmentName = @EnvironmentName;
+    
+    IF(@EnvironmentID = 0)
+    RETURN 0;
+
+    SELECT
+      @ServerTypeID = ISNULL(ID,0)
+    FROM dbo.UC_X_ServerTypeMaster
+    WHERE ServerTypeName = @ServerTypeName;
+
+    IF(@ServerTypeID = 0)
+    RETURN 0;
+
+  IF EXISTS (SELECT 1 FROM dbo.UC_X_ServerMaster WHERE ID = @ID)
   UPDATE SM SET 
+    SM.Server_IP = @Server_IP,
     SM.ServerName = @ServerName,
-    SM.EnvironmentID = EM.EnvironmentID,
-    SM.ServerTypeID = STM.ID,
+    SM.EnvironmentID = @EnvironmentID,
+    SM.ServerTypeID = @ServerTypeID,
     SM.Active = @Active
     FROM dbo.UC_X_ServerMaster SM
-    INNER JOIN dbo.UC_X_ServerTypeMaster STM  ON SM.ServerTypeID = STM.ID
-    INNER JOIN dbo.UC_X_EnvironmentMaster EM ON SM.EnvironmentID = EM.EnvironmentID
-  WHERE ( @ServerName IS NULL OR SM.ServerName = @ServerName)
-    AND ( @Server_IP IS NULL OR SM.Server_IP = @Server_IP)
-    AND ( @EnvironmentName IS NULL OR EM.EnvironmentName = @EnvironmentName)
-    AND ( @ServerTypeName IS NULL OR STM.ServerTypeName = @ServerTypeName)
-  ELSE IF NOT EXISTS(SELECT 1 FROM dbo.UC_X_ServerMaster WHERE Server_IP = @Server_IP)
-    UPDATE SM SET 
-      SM.Server_IP = @Server_IP,
-      SM.ServerName = @ServerName,
-      SM.EnvironmentID = EM.EnvironmentID,
-      SM.ServerTypeID = STM.ID,
-      SM.Active = @Active
-    FROM dbo.UC_X_ServerMaster SM
-      INNER JOIN dbo.UC_X_ServerTypeMaster STM  ON SM.ServerTypeID = STM.ID
-      INNER JOIN dbo.UC_X_EnvironmentMaster EM ON SM.EnvironmentID = EM.EnvironmentID
-    WHERE ( @ServerName IS NULL OR SM.ServerName = @ServerName)
-      AND ( @Server_IP IS NULL OR SM.Server_IP = @Server_IP)
-      AND ( @EnvironmentName IS NULL OR EM.EnvironmentName = @EnvironmentName)
-      AND ( @ServerTypeName IS NULL OR STM.ServerTypeName = @ServerTypeName)
+  WHERE SM.ID = @ID
 END
 GO

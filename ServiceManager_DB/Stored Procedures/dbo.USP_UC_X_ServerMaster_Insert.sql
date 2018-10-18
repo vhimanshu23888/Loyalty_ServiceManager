@@ -32,7 +32,7 @@ BEGIN
     IF(@ServerTypeID = 0)
     RETURN 0;
 
-  IF NOT EXISTS (SELECT 1 FROM dbo.UC_X_ServerMaster WHERE ServerName = @ServerName)
+  IF NOT EXISTS (SELECT 1 FROM dbo.UC_X_ServerMaster WHERE Server_IP = @Server_IP)
   INSERT INTO dbo.UC_X_ServerMaster
   (
     Server_IP,

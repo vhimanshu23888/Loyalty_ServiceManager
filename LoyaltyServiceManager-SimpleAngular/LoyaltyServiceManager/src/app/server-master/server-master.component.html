@@ -16,7 +16,7 @@
   </mat-form-field>
   <div></div>
   <mat-form-field>
-      <mat-select id="ddl_Environment" placeholder="Environment" (selectionChange) ="selectEnvironmentChanged($event)">
+      <mat-select id="ddl_Environment" placeholder="Environment" [(value)]="_selectedEnvironment">
         <mat-option *ngFor="let Environment of _getallEnvironmentsResponse" [value]="Environment.EnvironmentName">
           {{Environment.EnvironmentName}}
         </mat-option>
@@ -24,7 +24,7 @@
     </mat-form-field>
     <div></div>
     <mat-form-field>
-        <mat-select id="ddl_ServerType" placeholder="ServerType" (selectionChange) ="selectServerTypeChanged($event)">
+        <mat-select id="ddl_ServerType" placeholder="ServerType" [(value)] = "_selectedServerType">
           <mat-option *ngFor="let ServerType of _getallServerTypeResponse"  [value]="ServerType.ServerTypeName">
             {{ServerType.ServerTypeName}}
           </mat-option>

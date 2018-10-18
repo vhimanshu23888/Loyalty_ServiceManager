@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core/data-table';
 import { IPageChangeEvent } from '@covalent/core/paging';
-import { Observable, of } from 'rxjs';
 import {Http,Headers,RequestMethod,Response, RequestOptions} from '@angular/http';
 import { Services } from '../shared/services';
 import { ServiceResponse } from '../shared/Response';
 import { HttpHeaders,HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
-import {MatRadioModule} from '@angular/material/radio';
 import { FileUtil } from '../shared/file.util';
 import { TdLoadingService } from '@covalent/core/loading';
 import { CommonConstants } from '../shared/CommonConstants';
 
-const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 @Component({
   selector: 'app-environment-details',
   templateUrl: './environment-details.component.html',
@@ -21,6 +18,8 @@ const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 export class EnvironmentDetailsComponent implements OnInit {
   columns: ITdDataTableColumn[] = [
     { name: 'MachineName', label: 'Machine Name',width:100 },
+    {name: 'EnvironmentName', label: 'Environment',width:200},
+    {name: 'ServerTypeName', label: 'Machine Type',width:200},
     { name: 'ApplicationName',  label: 'Application Name', width: 350 },
     { name: 'Publisher', label: 'Publisher',  width: 250 },
     { name: 'ApplicationVersion', label: 'Version' ,width:150},

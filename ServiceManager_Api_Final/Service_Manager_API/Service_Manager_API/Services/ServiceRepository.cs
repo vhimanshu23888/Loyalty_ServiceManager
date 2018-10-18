@@ -335,6 +335,16 @@ namespace Service_Manager_API.Services
                         continue;
                     else
                         MachineNameSet.Add(machine.ToLower());
+
+                    List<ServerMaster> LstServerDetails = GetServerMaster(ServerIP:machine);
+
+                    string EnvironmentName = "NA", ServerTypeName = "NA";
+
+                    if (LstServerDetails.Count > 0 && LstServerDetails[0] != null)
+                    {
+                        EnvironmentName = LstServerDetails[0].EnvironmentName;
+                        ServerTypeName = LstServerDetails[0].ServerTypeName;
+                    }
                     //Retrieve the list of installed programs for each extrapolated machine name
                     var registry_key = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
                     using (Microsoft.Win32.RegistryKey key = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, machine).OpenSubKey(registry_key))
@@ -354,7 +364,9 @@ namespace Service_Manager_API.Services
                                                 ApplicationName = subkey.GetValue("DisplayName").ToString(),
                                                 ApplicationVersion = subkey.GetValue("DisplayVersion").ToString(),
                                                 InstalledDate = DateTime.ParseExact(subkey.GetValue("InstallDate")?.ToString(), "yyyyMMdd", CultureInfo.InvariantCulture).ToShortDateString(),
-                                                Publisher = subkey.GetValue("Publisher").ToString()
+                                                Publisher = subkey.GetValue("Publisher").ToString(),
+                                                EnvironmentName = EnvironmentName,
+                                                ServerTypeName = ServerTypeName
                                             });
                                     }
                                 }

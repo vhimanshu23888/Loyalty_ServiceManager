@@ -32,6 +32,7 @@ export class ServerMasterComponent implements OnInit {
   _selectedEnvironment: string ='';
   _selectedServerType: string ='';
   _serverIP:string='';
+  _serverID:number;
   _response: string;
   _getResponse:ServerMaster;
   _getallEnvironmentsResponse:EnvironmentMaster[];
@@ -49,7 +50,6 @@ export class ServerMasterComponent implements OnInit {
   sortBy: string = 'ServerName';
   selectedRows: ServerMaster[] = [];
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Ascending;
-
   constructor(private _http: Http,private _dataTableService: TdDataTableService,private _loadingService: TdLoadingService) { }
 
   ngOnInit() {
@@ -82,24 +82,34 @@ export class ServerMasterComponent implements OnInit {
       .subscribe(response => {
         this._response = response.json();
         this.getAllServers();
-        this.isUpdate = false;
-        this._serverName='' 
+        this.reset();
       });
     }
     else
     {
+      this._serverMaster.ServerID = this._serverID;
       this._serverMaster.ServerName = this._serverName;
       this._serverMaster.Active = true;
-      var body = JSON.stringify(this._serverName);
+      this._serverMaster.EnvironmentName = this._selectedEnvironment;
+      this._serverMaster.ServerTypeName = this._selectedServerType;
+      this._serverMaster.ServerIP = this._serverIP;
+      var body = JSON.stringify(this._serverMaster);
       var requestOptions = new RequestOptions({ method: RequestMethod.Put, headers: this.headers });
       this._http.put(CommonConstants.ApiURL + "PutServerMaster", body, requestOptions)
         .subscribe(response => {
           this._response = response.json();
           this.getAllServers();
-          this.isUpdate = false;
-          this._serverName='' 
+          this.reset();
         });
       } 
+  }
+  reset()
+  {
+    this._serverName='';
+    this._serverIP='';
+    this._selectedEnvironment='';
+    this._selectedServerType='';
+    this.isUpdate = false;
   }
     getAllEnvironments(){
         this._http.get(CommonConstants.ApiURL + "GetAllEnvironmentNames?EnvironmentName=")
@@ -112,15 +122,6 @@ export class ServerMasterComponent implements OnInit {
       .subscribe(response => {
         this._getallServerTypeResponse = response.json();
       });
-}
-selectEnvironmentChanged(event: MatSelectChange)
-{
-  this._selectedEnvironment = event.value;
-}
-
-selectServerTypeChanged(event: MatSelectChange)
-{
-  this._selectedServerType = event.value;
 }
 
 getAllServers(){
@@ -155,6 +156,7 @@ getAllServers(){
   showAlert(event: ITdDataTableRowClickEvent): void {
     this.isUpdate = true;
     this._serverMaster = event.row
+    this._serverID = this._serverMaster.ServerID;
     this._serverName = this._serverMaster.ServerName;
     this._serverIP = this._serverMaster.ServerIP;
     this._selectedEnvironment = this._serverMaster.EnvironmentName;
@@ -176,4 +178,5 @@ getAllServers(){
       newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     this._getallServerMasterResponse = newData;
   }
+
 }

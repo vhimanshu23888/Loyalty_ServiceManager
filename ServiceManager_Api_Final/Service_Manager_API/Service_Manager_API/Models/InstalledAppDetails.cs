@@ -14,6 +14,21 @@ namespace Service_Manager_API.Models
         /// The name of the machine.
         /// </value>
         public string MachineName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the environment.
+        /// </summary>
+        /// <value>
+        /// The name of the environment.
+        /// </value>
+        public string EnvironmentName { get; set; }
+        /// <summary>
+        /// Gets or sets the name of the server type.
+        /// </summary>
+        /// <value>
+        /// The name of the server type.
+        /// </value>
+        public string ServerTypeName { get; set; }
         /// <summary>
         /// Gets or sets the name of the application.
         /// </summary>

@@ -28,6 +28,6 @@ C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\Se
 C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\bin\System.Web.WebPages.xml
 C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\bin\System.Web.WebPages.Deployment.xml
 C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\bin\System.Web.WebPages.Razor.xml
+C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\obj\Debug\Service_Manager_API.csprojResolveAssemblyReference.cache
 C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\obj\Debug\Service_Manager_API.dll
 C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\obj\Debug\Service_Manager_API.pdb
-C:\Users\vermahi\OneDrive - Aristocrat Gaming\Learning\Loyalty_ServiceManager\ServiceManager_Api_Final\Service_Manager_API\Service_Manager_API\obj\Debug\Service_Manager_API.csprojResolveAssemblyReference.cache
