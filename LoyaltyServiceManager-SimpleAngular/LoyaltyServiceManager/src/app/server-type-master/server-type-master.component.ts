@@ -12,7 +12,7 @@ import { TdLoadingService } from '@covalent/core/loading';
 })
 export class ServerTypeMasterComponent implements OnInit {
 
-  columns: ITdDataTableColumn[] = [y
+  columns: ITdDataTableColumn[] = [
     { name: 'ID', label: 'ServerTypeID', width: 100,sortable: false },
     { name: 'ServerTypeName', label: 'ServerType Name', width: 250,sortable: true },
     { name: 'Active', label: 'Is Active', hidden: false, width: 100,sortable: false }
@@ -104,14 +104,14 @@ export class ServerTypeMasterComponent implements OnInit {
     }
   }
     getAllServerTypes(){
-      this._loadingService.register('stringName');
+      //this._loadingService.register('stringName');
         this._http.get(CommonConstants.ApiURL + "GetAllServerTypes?ServerTypeName=")
         .subscribe(response => {
           this._getallResponse = response.json();
           this.dataCopy = response.json();
           this.filter();      
         });
-        this._loadingService.resolve('stringName');    
+        //this._loadingService.resolve('stringName');    
   }
   search(searchTerm: string): void {
     this.searchTerm = searchTerm;
